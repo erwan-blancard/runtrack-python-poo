@@ -8,7 +8,7 @@ class Commande:
         self.__liste_plats = liste_plats
         self.__statut = 0
 
-    def ajouter_plat(self, plat: str, prix: int):
+    def ajouter_plat(self, plat: str, prix):
         self.__liste_plats[plat] = prix
 
     def annuler(self):
@@ -27,10 +27,11 @@ class Commande:
     def afficher_commande(self):
         for plat in self.__liste_plats:
             print(plat + ":", self.__liste_plats[plat])
-        print("Total:", self.__calculer_prix(), "\nTVA:", self.calculer_TVA(), "\nStatut:", STATUTS[self.__statut])
+        print("Total:", round(self.__calculer_prix(), 2), "\nTVA:", round(self.calculer_TVA(), 2), "\nStatut:", STATUTS[self.__statut])
 
-commande = Commande(5465635, {"jlkj": 55})
+
+commande = Commande(5465635, {"Couscous": 20.99})
 commande.afficher_commande()
 
-commande.ajouter_plat("gk", 65)
+commande.ajouter_plat("Pizza Fromage", 9.99)
 commande.afficher_commande()
