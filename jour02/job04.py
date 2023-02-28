@@ -16,6 +16,7 @@ class Student:
     def get_credits(self):
         return self.__credits
 
+    # retourne le niveau de l'étudiant
     def __studentEval(self):
         message = "Insuffisant"
         if self.get_credits() >= 90:
@@ -28,6 +29,7 @@ class Student:
             message = "Passable"
         return message
 
+    # affiche les infos de l'étudiant
     def studentInfo(self):
         print("Prénom:", self.__prenom)
         print("Nom:", self.__nom)

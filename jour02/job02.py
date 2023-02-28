@@ -27,6 +27,7 @@ class Livre:
         else:
             print("Le nombre de pages saisies est invalide ("+str(pages)+")")
 
+
 harrypotter = Livre("Harry Potter", "JK Rolling", 555)
 print(harrypotter.getTitre(), harrypotter.getAuteur(), harrypotter.getPages())
 

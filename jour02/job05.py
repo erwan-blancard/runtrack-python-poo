@@ -38,6 +38,7 @@ class Voiture:
     def set_en_marche(self, en_marche):
         self.__en_marche = en_marche
 
+    # si le plein est insuffisant, __en_marche ne change pas
     def demarrer(self):
         if self.__verifier_plein() > 5:
             self.__en_marche = True

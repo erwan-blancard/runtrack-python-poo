@@ -16,6 +16,7 @@ class Rectangle:
     def setLargeur(self, largeur):
         self.__largeur = largeur
 
+
 rect = Rectangle(10, 5)
 print(rect.getLongueur(), rect.getLargeur())
 

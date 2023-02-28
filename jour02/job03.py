@@ -18,10 +18,12 @@ class Livre:
     def vérification(self):
         return self.__disponible
 
+    # si disponible, __disponible passe à False
     def emprunter(self):
         if self.vérification():
             self.__disponible = False
 
+    # si indisponible, __disponible passe à True
     def rendre(self):
         if not self.vérification():
             self.__disponible = True
@@ -38,6 +40,7 @@ class Livre:
             self.__pages = pages
         else:
             print("Le nombre de pages saisies est invalide ("+str(pages)+")")
+
 
 harrypotter = Livre("Harry Potter", "JK Rolling", 555)
 print(harrypotter.getTitre(), harrypotter.getAuteur(), harrypotter.getPages(), harrypotter.vérification())

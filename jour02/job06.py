@@ -14,6 +14,7 @@ class Commande:
     def annuler(self):
         self.__statut = 2
 
+    # calcule le prix total de tous les plats
     def __calculer_prix(self):
         prix_total = 0
         for plat in self.__liste_plats:
