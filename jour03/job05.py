@@ -21,9 +21,11 @@ class Personnage:
         print(self.__nom, "attaque", personnage.getNom(), "!")
         personnage.enleverVie(random.randint(1, 6))
 
+    # permet de soigner le personnage
+    # l'attaque peut rater si nbre < 3
     def soigner(self):
         nbre = random.randint(2, 6)
-        if nbre > 3:
+        if nbre > 2:
             self.__vie += nbre
             print("\nSoin de", nbre, "PV pour", self.__nom, "!")
         else:
@@ -84,6 +86,7 @@ class Jeu:
                 self.action(ennemi, joueur, random.randint(1, 2))
             running = self.check_stats(joueur, ennemi)
 
+    # détermine l'action du personnage selon un index
     def action(self, personnage, adversaire, index):
         if index == 2:
             personnage.soigner()
@@ -95,6 +98,7 @@ class Jeu:
         print(joueur.getNom(), ":", joueur.getVie())
         print(ennemi.getNom(), ":", ennemi.getVie())
 
+    # check les conditions de victoire et de défaite
     def check_stats(self, joueur, ennemi):
         if ennemi.getVie() <= 0:
             print("\nGame Over! Vous avez triomphé !")
